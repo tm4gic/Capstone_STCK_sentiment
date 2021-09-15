@@ -90,3 +90,5 @@ Logistic and RF Classification yielded the best results. It is also apparent tha
 Having a 65% accuracy in predicting stock movement based only on tweet sentiments is a great start, but I would not recommend this model. Additional tuning and evaluation needs to be performed. I would like to overlay reddit posts (WSB) and other outside sources in order to assess the sensitivity. This analysis can also be applied to a number of other volatile stocks. 
 
 Finally, I overlayed the stock price of TESLA with Robintrack (https://robintrack.net/), which provides information on Robinhood users and their holdings of certain stocks. Eventually I want to use this information to analyze how retail traders react to negative and positive sentiments regarding a stock.
+
+![image](https://user-images.githubusercontent.com/83128139/133505583-58d0a0e5-f430-4ceb-8c38-7c2284491e19.png)
