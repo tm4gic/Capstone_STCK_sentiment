@@ -11,7 +11,9 @@ Lately, given the volatility of the stock market, especially during the COVID-19
 
 Tesla remains one of retail traders favorites (currently sits as the second most traded stock on Robinhood, a favorite trading platform for retail traders.) Because of the gap of information between large institutional traders and the retail traders. I have formed a hypothesis that the average retail trader would be more likely to react to both positive and negative sentiments regarding the stock itself.
 
-To try and prove this, this project attemps to use NLP's Sentiment analysis tools to solve a classification problem. Given an article released about Tesla, my classifier model will attempt to predict wether the stock would close up or below the open price for that day. 
+![image](https://user-images.githubusercontent.com/83128139/133501778-23b051bc-8be9-4e75-adf0-61273c2d3744.png)
+
+To try and prove this, this project attemps to use NLP's Sentiment analysis tools to solve a classification problem. Given an article/tweet released about Tesla, my classifier model will attempt to predict wether the stock would close up or below the open price for that day. 
 
 ## Data
 
@@ -34,7 +36,9 @@ The body of artciles were obtained from webscraping using beautiful soup.
 
 ### Data Processing
 
-insert EDA graphs and analysis
+![image](https://user-images.githubusercontent.com/83128139/133501486-1494f697-e22c-4778-aa33-e9f0a362ef52.png)
+
+
 
 ## Natural Language Processing
 Natural Language Processing (NLP) was applied to each article snippet (headline), lead paragraph and article body. Two sentiment analysis toolsets were applied to the article texts.
@@ -60,16 +64,12 @@ example:
 ![image](https://user-images.githubusercontent.com/83128139/132558478-034e55d3-c147-4eb2-ae30-8701fbde8b30.png)
 
 
-* postive
+* postive 
 * negative
 * neutral
 * compound= The compound score is the sum of positive, negative & neutral scores which is then normalized between -1(most extreme negative) and +1 (most extreme positive).
 
-### Dataframes
 
-Since the New York times does not write an article daily on tesla, the final data frame was aggregated by date.
-
-Possibly tlak about including tweets etc. My final dataframe is not fully set yet
 
 ### Data Engeneering
 
@@ -78,18 +78,15 @@ Initially, I intended to predict Tesla Stock Closing price solely using features
 * OBV (On Balance Volume) : a measure of buying and selling pressures as a cumulative indicator that adds volume on up days and subtracts volume on down days. When the security closes lower than the previous close all the day's volume is considered down-volume. Usually when both price and OBV make higher peaks and throughs, the upward trend is more likely to continue and vice versa. For more information please visit https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/obv
 * RSI (Relative Strength Index): describe what it is etc.
 
-## Models
+OBV was too correlated to price and when running it with the tweet sentiments returned results up to 90% accuracy. Since this project was aimed to solve the classification problem without using any direct price metrics I decided to incorporate the NASDAQ (Tesla is apart of this index) movement of the day to help predict in my models. The NASDAQ movement feature is simply a binary column (0= closed down, 1= closed up)
 
-### Logistic
-Summary of the model
+## Models/ Results
 
-### Random Forest
-Model Summary 
-### Naive Bayes
+<img width="761" alt="Screen Shot 2021-09-15 at 3 54 11 PM" src="https://user-images.githubusercontent.com/83128139/133502275-ab7cc6d1-8a2d-4e23-a534-29991ee05102.png">
 
-Summary of Model
-
-did not put anything here yet becasue I want to run models with price in the DF (right now only have without)
+Logistic and RF Classification yielded the best results. It is also apparent that Tesla Stock is more sensitive to Elon Musk's Tweets than NYT Articles from this analysis.
 
 ## Conclusion
+Having a 65% accuracy in predicting stock movement based only on tweet sentiments is a great start, but I would not recommend this model. Additional tuning and evaluation needs to be performed. I would like to overlay reddit posts (WSB) and other outside sources in order to assess the sensitivity. This analysis can also be applied to a number of other volatile stocks. 
 
+Finally, I overlayed the stock price of TESLA with Robintrack (https://robintrack.net/), which provides information on Robinhood users and their holdings of certain stocks. Eventually I want to use this information to analyze how retail traders react to negative and positive sentiments regarding a stock.
