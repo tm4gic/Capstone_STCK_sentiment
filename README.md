@@ -7,13 +7,13 @@ In this project, NLP is used to attempt to predict Tesla Stock movement based on
 ## Overview
 We have all heard at some point about the magic of the Stock market, transforming investments into fortunes for those that dare take the risk. Many investors and institutions study, observe and gather data on stock to gain any edge that they can in order to provide a strong and reliable stock trading strategy. Similar to a casino, gaining any edge over 50% could lead to great rewards. 
 
-Lately, given the volatility of the stock market, especially during the COVID-19, many oppurtunities have presented themselves in the market. The stock market experienced an influx from the stimulus packages as well a influx of retail traders. According to a study, more than 10MM new brokerage accounts were opened in 2020 - more than ever in a year. We have seen stocks such as GameStop, Moderna, Wayfair, Peloton and many more gain enormous amounts of market cap. For this project, I decided to pick one of people's favorites and as well as a large winner from Covid-19- Tesla. Tesla has increased its price from its Covid low of around $72 to its current price of $753 as of Tuesday, September 9 close.
+Lately, given the volatility of the stock market, especially during the COVID-19, many opportunities have presented themselves. The stock market experienced an influx from the stimulus packages and a wave of retail traders followed. According to a study, more than 10MM new brokerage accounts were opened in 2020 - more than ever in a year. We have seen stocks such as GameStop, Moderna, Wayfair, Peloton and many more gain enormous amounts of market cap. For this project, I decided to pick one of people's favorites and as well as a large winner from Covid-19- Tesla. Tesla has increased its price from its Covid low of around $72 to its current price of $753 as of Tuesday, September 9 close.
 
 Tesla remains one of retail traders favorites (currently sits as the second most traded stock on Robinhood, a favorite trading platform for retail traders.) Because of the gap of information between large institutional traders and the retail traders. I have formed a hypothesis that the average retail trader would be more likely to react to both positive and negative sentiments regarding the stock itself.
 
 ![image](https://user-images.githubusercontent.com/83128139/133501778-23b051bc-8be9-4e75-adf0-61273c2d3744.png)
 
-To try and prove this, this project attemps to use NLP's Sentiment analysis tools to solve a classification problem. Given an article/tweet released about Tesla, my classifier model will attempt to predict wether the stock would close up or below the open price for that day. 
+To try and prove this, this project attempts to use NLP's Sentiment analysis tools to solve a classification problem. Given an article/tweet released about Tesla, my classifier model will attempt to predict wether the stock would close up or below the open price for that day. 
 
 ## Data
 
@@ -32,7 +32,7 @@ The API returned the following information for each article:
 
 ### Web Scraping
 
-The body of artciles were obtained from webscraping using beautiful soup.
+The body of articles were obtained from webscraping using beautiful soup.
 
 ### Data Processing
 
@@ -50,7 +50,7 @@ Two NLP tools were used in this analysis:
 TextBlob Sentiment Analysis tool was applied to the snippet (headline), lead paragraph and article body of each article. Form there, Polarity and subjectivity scores were recorded for each article.
 
 * Polarity: a float which lies in the range of [-1,1] where 1 means positive statement and -1 means a negative statement.
-* Subjectivity : a float between [0,1] where 0 refer to factuaql information and 1 indicates that it is total public opinion
+* Subjectivity : a float between [0,1] where 0 refer to factual information and 1 indicates that it is total public opinion
 
 ### Vader Sentiment Tool
 
@@ -71,10 +71,10 @@ example:
 
 
 
-### Data Engeneering
+### Data Engineering
 
-Initially, I intended to predict Tesla Stock Closing price solely using features not relating to the sotck price. In order to improve the scores I added serveral features on top of the NLP scores generated that I believed could help this classification problem.
-* Article count : On the days with more articles could indicate a important news day for the stock (i.e earnings, catastrophic event, uncexpected event, etc.)
+Initially, I intended to predict Tesla Stock Closing price solely using features not relating to the stock price. In order to improve the scores I added several features on top of the NLP scores generated that I believed could help this classification problem.
+* Article count : On the days with more articles could indicate an important news day for the stock (i.e earnings, catastrophic event, unexpected event, etc.)
 * OBV (On Balance Volume) : a measure of buying and selling pressures as a cumulative indicator that adds volume on up days and subtracts volume on down days. When the security closes lower than the previous close all the day's volume is considered down-volume. Usually when both price and OBV make higher peaks and throughs, the upward trend is more likely to continue and vice versa. For more information please visit https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/obv
 * RSI (Relative Strength Index): describe what it is etc.
 
@@ -89,6 +89,6 @@ Logistic and RF Classification yielded the best results. It is also apparent tha
 ## Conclusion
 Having a 65% accuracy in predicting stock movement based only on tweet sentiments is a great start, but I would not recommend this model. Additional tuning and evaluation needs to be performed. I would like to overlay reddit posts (WSB) and other outside sources in order to assess the sensitivity. This analysis can also be applied to a number of other volatile stocks. 
 
-Finally, I overlayed the stock price of TESLA with Robintrack (https://robintrack.net/), which provides information on Robinhood users and their holdings of certain stocks. Eventually I want to use this information to analyze how retail traders react to negative and positive sentiments regarding a stock.
+Finally, I overlaid the stock price of TESLA with Robintrack (https://robintrack.net/), which provides information on Robinhood users and their holdings of certain stocks. Eventually I want to use this information to analyze how retail traders react to negative and positive sentiments regarding a stock.
 
 ![image](https://user-images.githubusercontent.com/83128139/133505583-58d0a0e5-f430-4ceb-8c38-7c2284491e19.png)
