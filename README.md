@@ -34,6 +34,13 @@ The API returned the following information for each article:
 
 The body of articles were obtained from webscraping using beautiful soup.
 
+### Tweets: 
+Tweets were obtained via https://www.kaggle.com/andradaolteanu/all-elon-musks-tweets
+
+### NASDAQ Price
+NASDAQ price were obtained from Yahoo Finance
+
+
 ### Data Processing
 
 ![image](https://user-images.githubusercontent.com/83128139/133501486-1494f697-e22c-4778-aa33-e9f0a362ef52.png)
