@@ -23,6 +23,8 @@ https://developer.nytimes.com/docs/articlesearch-product/1/overview
 
 The Article Search API of The New York Time was queried for articles containing the term 'tesla' 2010 (Tesla IPO year) and 2021. The search term returned a total of 3,220 article hits.
 
+1000 Elon Musk tweets were used ranging from 2015-2020
+
 The API returned the following information for each article:
 * URL
 * Snippet (Headline)
