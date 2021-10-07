@@ -40,7 +40,7 @@ The body of articles were obtained from webscraping using beautiful soup.
 Tweets were obtained via https://www.kaggle.com/andradaolteanu/all-elon-musks-tweets
 
 ### NASDAQ Price
-NASDAQ price were obtained from Yahoo Finance
+NASDAQ price were obtained from Yahoo Finance.
 
 
 ### Data Processing
